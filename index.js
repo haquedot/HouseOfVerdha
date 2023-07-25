@@ -66,15 +66,16 @@ var listingItem = '';
 for (var i = 1; i <= images.length; i++) {
     listingItem += `<div class="item">
                 <img src="./images/listing-first/${i}a.webp" alt="${i}">
-                <div class="description">
+                
+            </div>`
+}
+/* <div class="description">
                     <p>Turquoise Blue Gold with Copper silver zari Kanjeevaram Silk Saree</p>
                     <div class="price">
                         <p>Rs. 6,799.00</p>
                         <p>Rs. 3,399.00</p>
                     </div>
-                </div>
-            </div>`
-}
+                </div> */
 listing.innerHTML = listingItem;
 listing.style.width = `${((images.length)/4)*100}%`;
 right.addEventListener('click', () => {
@@ -150,4 +151,57 @@ fourthRight.addEventListener('click', () => {
 fourthLeft.addEventListener('click', () => {
     fourthListing.style.transform = `translateX(${0}px)`;
     fourthListing.style.transition = 'all 1s ease-in-out';
+})
+
+
+//Testimonial crousel 
+var testimonial = document.querySelector('.testimonial');
+var testListing = document.querySelector('.testListing');
+var testItem = document.querySelector('.testItem');
+var testNavItem = document.querySelectorAll('.testNavItem');
+var test = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+var testingItem = '';
+for (var i = 1; i <= test.length; i++) {
+    testingItem += `<div class="testItem">
+                    <div class="upper">
+                        <div class="upperImg">
+                            <img src="./images/testimonial/${1}.jpg" alt="i">
+                        </div>
+                        <div class="UpperRight">
+                            <div class="stars">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <p>Hibbanur Rahman</p>
+                            <p>2023-06-22</p>
+                            <p>Fuschia Pink Silver Zari Kanjeevaram Silk Saree - House of Vardha</p>
+                        </div>
+                    </div>
+                    <div class="lower">
+                        <div class="spacing">
+                            <p>Feeling like a Gentle Man</p>
+                        </div>
+                        <div class="quotes">
+                            <p>The beauty of the saree is beyond my expectations... the texture is so smooth that my skin loves it.. definitely worth the price ... vardha proves the scincerity they claim... Thank you Vardha...</p>
+                        </div>
+                    </div>
+                </div>`;
+}
+testListing.innerHTML = testingItem;
+testListing.style.width = `${((test.length)/3)*100}%`;
+var length = testimonial.clientWidth;
+var j = 1;
+testNavItem.forEach((element) => {
+    element.addEventListener('click', () => {
+        testListing.style.transform = `translateX(-${length*j}px)`
+        testListing.style.transition = 'all 0.5s ease-in-out';
+        element.style.backgroundColor = 'black';
+        j++;
+        if (j >= (test.length) / 3) {
+            j = 1;
+        }
+    })
 })
