@@ -6,8 +6,31 @@ var sareeNav = document.querySelector('.saree-nav');
 var right = document.querySelector('.right');
 var left = document.querySelector('.left');
 var listing = document.querySelector('.listing');
+var open = document.querySelector(".open");
+const close = document.querySelector(".close");
+
+var navbar = document.querySelector(".navbar");
+var navList = document.querySelector(".nav-list");
+var navItemMob = document.getElementsByClassName("navItemMob");
+
+
 console.log(sareeNav);
 
+
+open.addEventListener("click", function() {
+    close.style.display = 'block';
+    navbar.style.display = 'block';
+    navList.style.display = 'block';
+    navItemMob.style.display = 'block';
+
+});
+close.addEventListener("click", function() {
+    close.style.display = 'none';
+    navbar.style.display = 'none';
+    navList.style.display = 'none';
+    navItemMob.style.display = 'none';
+
+});
 var slides = [
     '<img src="./images/slider1.webp">',
     '<img src="./images/slider2.webp">'

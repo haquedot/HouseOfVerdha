@@ -1,8 +1,30 @@
 @media (max-width: 480px) {
+    .navMob {
+        display: flex;
+    }
+    .navMob2 {
+        padding-top: 100px;
+        display: none;
+        background-color: white;
+        width: 90%;
+        height: 100%;
+        transition: all 0.5s ease-in-out;
+    }
+    .nav-list {
+        display: none;
+        color: black;
+        padding: 20px;
+    }
+    .navItemMob {
+        padding-bottom: 40px;
+    }
     .seventhListing {
         display: block;
     }
     .navbar {
+        display: none;
+    }
+    .nav-icons {
         display: none;
     }
     .saree-nav {
